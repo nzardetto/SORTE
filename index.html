@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Sorteador Pro PWA</title>
+</head>
+<body>
+
+    <nav>
+        <button id="btn-tab-num" onclick="switchTab('numeros')" class="active-btn">Números</button>
+        <button id="btn-tab-frase" onclick="switchTab('frases')">Frases</button>
+    </nav>
+
+    <section id="section-numeros" class="active">
+        <h2>Sorteio de Números</h2>
+        <div class="input-group">
+            <input type="number" id="num-inicial" placeholder="Início">
+            <input type="number" id="num-final" placeholder="Fim">
+        </div>
+        <input type="number" id="num-qtd" placeholder="Quantidade de números" value="1">
+        <button onclick="sortearNumeros()">SORTEAR AGORA</button>
+    </section>
+
+    <section id="section-frases">
+        <h2>Sorteio de Frases</h2>
+        <textarea id="campo-frases" rows="6" placeholder="Digite uma frase por linha..."></textarea>
+        <input type="number" id="frase-qtd" placeholder="Quantas sortear?" value="1">
+        <button onclick="prepararSorteioFrases()">PRONTO</button>
+    </section>
+
+    <div id="modal-giro" class="modal">
+        <div class="modal-content">
+            <button id="btn-girar">GIRAR SORTEADOR 🎲</button>
+            <div id="resultado-container">
+                <div id="resultado-texto"></div>
+            </div>
+            <button onclick="fecharModal()" class="btn-secundario">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
